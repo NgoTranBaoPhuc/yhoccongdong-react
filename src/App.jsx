@@ -4,6 +4,7 @@ import HomePage from './assets/pages/HomePage';
 import ProjectsPage from './assets/pages/ProjectsPage';
 import LibraryPage from './assets/pages/LibraryPage';
 import JoinPage from './assets/pages/JoinPage';
+import Footer from './assets/components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/lien-he" element={<JoinPage />} />
 
       </Routes>
+      <Footer />
     </Router>
   );
 }

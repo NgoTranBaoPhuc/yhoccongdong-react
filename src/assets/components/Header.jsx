@@ -64,7 +64,6 @@ function CustomHeader() {
                 </nav>
             </div>
 
-            <div style={{ paddingTop: '120px' }}></div>
         </>
     );
 }

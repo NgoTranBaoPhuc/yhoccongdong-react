@@ -1,0 +1,36 @@
+.joinPage {
+
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    top: 200px;
+}
+
+.head-tile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+
+
+}
+
+.head-tile h1 {
+    max-width: 500px;
+    background: linear-gradient(94.91deg, #538099 0%, #328d93 31.35%, #2f9d6c 58.78%, #51ae55 83.6%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0;
+    padding-right: 20px;
+
+}
+
+.background-img img {
+    width: 460px;
+    max-width: 100%;
+
+    height: auto;
+
+}

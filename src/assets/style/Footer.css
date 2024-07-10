@@ -1,0 +1,93 @@
+.footer {
+    background: linear-gradient(180deg, rgba(57, 153, 70, 0.002) 0%, rgba(57, 153, 70, 0.2) 100%);
+    padding: 20px 0;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+
+
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.footer_logo img,
+.footer_logomobile img {
+
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    margin-right: 10px;
+}
+
+.footer_copyright {
+    color: gray;
+}
+
+.footer_copyright a {
+    color: #000000;
+}
+
+
+
+.footer_introduce-title,
+.footer_contact-title {
+    background: linear-gradient(94.91deg, #538099 0%, #328d93 31.35%, #2f9d6c 58.78%, #51ae55 83.6%);
+    margin-bottom: 10px;
+    font-weight: bold;
+    -webkit-background-clip: text;
+    color: transparent !important;
+    width: fit-content;
+}
+
+.footer_introduce-content p {
+    color: gray;
+}
+
+.footer_contact-email img {
+    width: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.footer_contact-icon a {
+    margin-right: 10px;
+}
+
+.footer_contact-icon img {
+    width: 30px;
+    margin-top: 10px;
+}
+
+.footer_totop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.footer_totop i {
+    font-size: 20px;
+}
+
+.footer_totop.show {
+    display: block;
+}
+
+.footer_totop.hide {
+    display: none;
+}
