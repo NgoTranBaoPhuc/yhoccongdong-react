@@ -1,46 +1,71 @@
-
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Menu, Input, Button } from 'antd';
-import { SearchOutlined, HeartOutlined, UserOutlined } from '@ant-design/icons';
+import { Input, Button } from 'antd';
+import { SearchOutlined, HeartOutlined } from '@ant-design/icons';
 import logo from '../images/logo.png';
-
-const { Header } = Layout;
+import '../style/CustomHeader.css';
 
 function CustomHeader() {
+    const [category, setCategories] = useState([
+        {
+            name: "Y HỌC CỘNG ĐỒNG",
+            link: "/y-hoc-cung-dong"
+        },
+        {
+            name: "DỰ ÁN",
+            link: "/du-an"
+        },
+        {
+            name: "TỦ SÁCH",
+            link: "/tu-sach"
+        },
+        {
+            name: "ĐĂNG KÝ THAM GIA",
+            link: "/dang-ky-tham-gia"
+        },
+        {
+            name: "LIÊN HỆ",
+            link: "/lien-he"
+        }
+    ]);
+
     return (
-        <Header className="header" style={{ backgroundColor: 'white', padding: '0 50px' }}>
-            <div className="logo" style={{ float: 'left', marginRight: '20px' }}>
-                <img src={logo} alt="Logo" style={{ height: '40px' }} />
+        <>
+            <div className="header-container">
+                <div className="top-bar">
+                    <div className="logo">
+                        <img src={logo} alt="Logo" />
+                    </div>
+                    <Input
+                        className="search-bar"
+                        placeholder="Tìm kiếm trong y học cộng đồng"
+                        prefix={<SearchOutlined />}
+                    />
+                    <div className="auth-buttons">
+                        <Button className="custom-button" type="primary" >
+                            ĐĂNG NHẬP
+                        </Button>
+                        <Button className="custom-button" type="primary" icon={<HeartOutlined />}>
+                            QUÊN GÓP
+                        </Button>
+                    </div>
+                </div>
+                <nav className="nav-menu">
+                    {
+                        category && category.length > 0 && (
+                            category.map((item, index) => {
+                                const isActive = location.pathname === item.link;
+                                return (
+                                    <Link key={index} to={item.link} className={isActive ? 'active' : ''}>{item.name}</Link>
+                                )
+                            })
+                        )
+                    }
+                </nav>
             </div>
-            <Input
-                placeholder="Tìm kiếm trong y học cộng đồng"
-                prefix={<SearchOutlined />}
-                style={{ width: '300px', marginRight: '20px' }}
-            />
-            <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} style={{ flexGrow: 1 }}>
-                <Menu.Item key="1">
-                    <Link to="/">Y HỌC CỘNG ĐỒNG</Link>
-                </Menu.Item>
-                <Menu.Item key="2">
-                    <Link to="/projects">DỰ ÁN</Link>
-                </Menu.Item>
-                <Menu.Item key="3">
-                    <Link to="/library">TỦ SÁCH</Link>
-                </Menu.Item>
-                <Menu.Item key="4">
-                    <Link to="/join">ĐĂNG KÝ THAM GIA</Link>
-                </Menu.Item>
-                <Menu.Item key="5">
-                    <Link to="/contact">LIÊN HỆ</Link>
-                </Menu.Item>
-            </Menu>
-            <Button type="primary" icon={<UserOutlined />} style={{ marginRight: '10px' }}>
-                Đăng Nhập
-            </Button>
-            <Button type="primary" icon={<HeartOutlined />} style={{ backgroundColor: 'green', borderColor: 'green' }}>
-                Quyên Góp
-            </Button>
-        </Header>
+
+            <div style={{ paddingTop: '120px' }}></div>
+        </>
     );
 }
 

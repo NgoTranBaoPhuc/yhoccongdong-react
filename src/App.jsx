@@ -1,23 +1,21 @@
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CustomHeader from './assets/components/Header';
 import HomePage from './assets/pages/HomePage';
 import ProjectsPage from './assets/pages/ProjectsPage';
 import LibraryPage from './assets/pages/LibraryPage';
-import JoinPage from './assets/pages/LibraryPage';
+import JoinPage from './assets/pages/JoinPage';
 
 function App() {
   return (
     <Router>
       <CustomHeader />
-      <Switch>
+      <Routes>
+        <Route path="/y-hoc-cung-dong" element={<HomePage />} />
+        <Route path="/du-an" element={<ProjectsPage />} />
+        <Route path="/tu-sach" element={<LibraryPage />} />
+        <Route path="/lien-he" element={<JoinPage />} />
 
-        <Route exact path="/" component={HomePage} />
-        <Route path="/projects" component={ProjectsPage} />
-        <Route path="/library" component={LibraryPage} />
-        <Route path="/join" component={JoinPage} />
-
-      </Switch>
+      </Routes>
     </Router>
   );
 }
